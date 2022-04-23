@@ -13,8 +13,10 @@ module.exports = (latitude, longitude, callback) => {
             const currentWeather = response.body.current
             const temperature = currentWeather.temperature
             const feelsLike = currentWeather.feelslike
+            const windSpeed = currentWeather.wind_speed
             const weatherDescription = currentWeather.weather_descriptions[0]
-            callback(undefined, `The weather description is ${weatherDescription}. It is currently ${temperature} degrees. It feels like ${feelsLike} out.`)
+            console.log('currentWeather', currentWeather)
+            callback(undefined, `The weather description is ${weatherDescription}. It is currently ${temperature} degrees. It feels like ${feelsLike} out. Wind speed is ${windSpeed} km/h.`)
         }
     })
 }
